@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import WebFontLoader from "webfontloader";
+import dayjs from "dayjs";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from "./App";
+
+import "dayjs/locale/ru";
+import "./css/index.css";
+
+WebFontLoader.load({
+	google: {
+		families: ["Open Sans:300,400,700"],
+	},
+});
+
+dayjs.locale("ru");
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+	<StrictMode>
+		<App />
+	</StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
